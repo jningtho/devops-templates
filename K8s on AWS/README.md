@@ -37,8 +37,8 @@ e.g: - DNS for domain - k8s.dev.mydomain.com
 
 Route53 hosted zone: - k8s.dev.mydomain.com
 CLI:
-```aws route53 create-hosted-zone --name dev.mydomain.com --caller-reference 1
-```
+`aws route53 create-hosted-zone --name dev.mydomain.com --caller-reference 1`
+
 Set up your NS records in the parent domain, so that records in the domain will resolve. Here, you would create NS records in mydomain.com for dev. If it is a root domain name you would configure the NS records at your domain registrar (e.g. example.com would need to be configured where you bought example.com).
 
 Use the `dig` tool to confirm cluster is configured correctly. You should see the 4 AWS NS records that Route53 assigned your hosted zone.
