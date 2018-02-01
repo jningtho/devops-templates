@@ -6,7 +6,12 @@ spec:
   selector:
     matchLabels:
       app: nginx
-  replicas: 4 # Update the replicas from 2 to 4
+  replicas: 6 # Update the replicas from 2 to 4
+  minReadySeconds: 10 # wait for 10 secs before the deploy of each pods
+  strategy:
+      type: rollingUpdate
+      maxAvailable: 1
+      maxSurge: 1
   template:
     metadata:
       labels:
