@@ -1,4 +1,4 @@
-FROM node:carbon # LTS version carbon of node from Dockerhub
+FROM node:latest
 
 # Create app directory
 WORKDIR /usr/src/app
